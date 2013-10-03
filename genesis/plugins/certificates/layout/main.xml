@@ -20,6 +20,21 @@
         </dt>
     </pad>
 
+    <dialogbox id="dlgUpload">
+        <formline text="Certificate name" help="An internal name to help you identify this certificate within Genesis.">
+            <textinput name="certname" id="certname" />
+        </formline>
+        <formline text="Certificate">
+            <input type="file" name="cert_file" id="cert_file" />
+        </formline>
+        <formline text="Certificate Chain (optional)">
+            <input type="file" name="cert_chain" id="cert_chain" />
+        </formline>
+        <formline text="Certificate Key">
+            <input type="file" name="cert_key" id="cert_key" />
+        </formline>
+    </dialogbox>
+
     <dialogbox id="dlgGen">
         <formline text="Certificate name" help="An internal name to help you identify this certificate within Genesis.">
             <textinput name="certname" id="certname" />

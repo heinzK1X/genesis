@@ -116,3 +116,31 @@
     </script>
 </div>
 </xsl:template>
+
+<xsl:template match="custuploadbox">
+<div>
+    <div id="{@id}" class="modal fade">
+        <div class="modal-body">
+            <form id="form-{@id}" action="{@url}" method="POST" enctype="multipart/form-data" style="margin-bottom: 0px;">
+                <input id="{@id}-url" type="hidden" name="__url" value="{@url}"/>
+                <xsl:apply-templates />
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <xsl:if test="not(@hideok = 'True')">
+                <button design="primary" text="Upload" onclick="form" form="form-{@id}" action="OK" />
+            </xsl:if>
+            <xsl:if test="not(@hidecancel = 'True')">
+                <button text="Cancel" onclick="form" action="Cancel" form="{@id}"/>
+            </xsl:if>
+            <xsl:if test="@miscbtn">
+                <button text="{@miscbtn}" id="{@miscbtnid}"/>
+            </xsl:if>
+        </div>
+    </div>
+    <script>
+        Genesis.UI.showAsModal('<xsl:value-of select="@id"/>');
+    </script>
+</div>
+</xsl:template>

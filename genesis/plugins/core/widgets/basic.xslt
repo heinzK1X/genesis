@@ -27,7 +27,7 @@
             </xsl:when>
 
             <xsl:when test="@onclick = 'form'">
-                return Genesis.submit('<xsl:value-of select="@form" />',
+                return Genesis.submitForm('<xsl:value-of select="@form" />',
                     '<xsl:value-of select="@action" />');
             </xsl:when>
 

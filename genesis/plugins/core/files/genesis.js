@@ -7,6 +7,8 @@ Genesis = {
         $.ajax({
             url: _uri,
             data: _data,
+            contentType: false,
+            processData: false,
             success: _noupdate?undefined:Genesis.Core.processResponse,
             error: Genesis.Core.processOffline,
             type: _data?'POST':'GET',
@@ -53,6 +55,52 @@ Genesis = {
             });
 
             Genesis.query(url, params);
+        }
+        return false;
+    },
+
+    submitForm: function (fid, action) {
+        form = $('#'+fid);
+        var formData = new FormData();
+        if (form) {
+            formData.append("action", action);
+            url = $('input[type=hidden]', form)[0].value;
+
+            $('input[type=text], input[type=password], input[type=hidden]', form).each(function (i,e) {
+                if (e.name != '__url')
+                    formData.append(e.name, e.value);
+            });
+
+            $('input[type=checkbox]', form).each(function (i,e) {
+                formData.append(e.name, (e.checked?1:0));
+            });
+
+            $('input[type=radio]', form).each(function (i,e) {
+                if (e.checked)
+                    formData.append(e.name, e.value);
+            });
+
+            $('input[type=file]', form).each(function (i,e) {
+                formData.append(e.name, e.files[0]);
+            });
+
+            $('select:not([id$="-hints"])', form).each(function (i,e) {
+                formData.append(e.name, e.options[e.selectedIndex].value);
+            });
+
+            $('textarea', form).each(function (i,e) {
+                formData.append(e.name, e.value);
+            });
+
+            $('.ui-el-sortlist', form).each(function (i,e) {
+                var r = '';
+                $('>*', $(e)).each(function(i,e) {
+                    r += '|' + e.id;
+                });
+                formData.append(e.id, r);
+            });
+
+            Genesis.query(url, formData);
         }
         return false;
     },
