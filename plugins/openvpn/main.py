@@ -10,7 +10,7 @@ class OpenVPNPlugin(CategoryPlugin):
     """OpenVPN plugin
     @ivar _b: Backend instance"""
     text = "OpenVPN"
-    icon = "/dl/openvpn/icon.png"
+    iconfont = "gen-lock"
     folder = "servers"
 
     def on_init(self):
@@ -51,7 +51,7 @@ class OpenVPNPlugin(CategoryPlugin):
         ui.find("bytesout").set("text", "Bytes out: {0}".format(str_fsize(float(stats["bytesout"]))))
 
         map(lambda c: ui.append("clients", UI.DTR(
-            UI.Icon(icon="/dl/core/ui/stock/user.png"),
+            UI.IconFont(iconfont="gen-user"),
             UI.Label(text=c["cn"]),
             UI.Label(text=c["raddress"]),
             UI.Label(text=c["vaddress"]),
@@ -59,7 +59,7 @@ class OpenVPNPlugin(CategoryPlugin):
             UI.Label(text=str_fsize(float(c["bsent"]))),
             UI.Label(text=c["connsince"]),
             UI.TipIcon(
-                icon="/dl/core/ui/stock/delete.png",
+                iconfont="gen-close-2",
                 text="Disconnect",
                 warning="Disconnect {0} ({1})?".format(c["cn"], c["raddress"]),
                 id="disconnect/{0}".format(c["raddress"]))

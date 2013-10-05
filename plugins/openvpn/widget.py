@@ -10,7 +10,7 @@ class OpenVPNWidget(Plugin):
     """OpenVPN Widget
     @ivar _b: Backend instance"""
     implements(apis.dashboard.IWidget)
-    icon = "/dl/openvpn/icon.png"
+    iconfont = "gen-lock"
     name = "OpenVPN"
     title = "OpenVPN"
     style = "normal"

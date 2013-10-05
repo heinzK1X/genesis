@@ -1,9 +1,9 @@
 <xml>
     <toolbar>
-        <button id="condRestart" icon="/dl/core/ui/stock/refresh.png" text="Conditional restart"
-                warning="perform conditional restart. All sessions will be dropped. Are you sure?"/>
-        <button id="hardRestart" icon="/dl/core/ui/stock/service-restart.png" text="Hard restart"
-                warning="perform hard restart. All sessions will be dropped. Are you sure?"/>
+        <button id="condRestart" iconfont="gen-loop-2" text="Conditional restart"
+                warning="OpenVPN will perform a conditional restart. All sessions will be dropped. Are you sure?"/>
+        <button id="hardRestart" iconfont="gen-loop-2" text="Hard restart"
+                warning="OpenVPN will perform a hard restart. All sessions will be dropped. Are you sure?"/>
     </toolbar>
 
     <tabcontrol id="tabs" active="0">
@@ -16,19 +16,19 @@
                     <ltr>
                         <ltd>
                             <hcontainer>
-                                <image file="/dl/core/ui/stock/service-run.png"/>
+                                <iconfont iconfont="gen-switch"/>
                                 <label id="nclients"/>
                             </hcontainer>
                         </ltd>
                         <ltd>
                             <hcontainer>
-                                <image file="/dl/openvpn/in.png"/>
+                                <iconfont iconfont="gen-download"/>
                                 <label id="bytesin"/>
                             </hcontainer>
                         </ltd>
                         <ltd >
                             <hcontainer>
-                                <image file="/dl/openvpn/out.png"/>
+                                <iconfont iconfont="gen-upload"/>
                                 <label id="bytesout"/>
                             </hcontainer>
                         </ltd>

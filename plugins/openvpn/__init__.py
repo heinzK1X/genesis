@@ -1,6 +1,6 @@
 # coding=utf-8
-"""OpenVPN Plugin for Genesis"""
-MODULES = ['main', 'widget', 'config', 'backend', ]
+"""OpenVPN Plugin for Ajenti - Ported to Genesis by arkOS Team"""
+MODULES = ['main', 'widget', 'config', 'backend']
 
 DEPS = [
 	(['any'],
@@ -10,9 +10,10 @@ DEPS = [
 ]
 
 NAME = 'OpenVPN'
+ICON = 'gen-lock'
 PLATFORMS = ['any']
-DESCRIPTION = 'OpenVPN Management'
-VERSION = '1.1'
+DESCRIPTION = ''
+VERSION = '2'
 GENERATION = 1
 AUTHOR = 'Ilya Voronin'
 HOMEPAGE = 'https://github.com/ivoronin'

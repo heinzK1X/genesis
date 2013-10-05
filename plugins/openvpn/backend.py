@@ -9,7 +9,7 @@ class OpenVPNBackend(Plugin):
     OpenVPN plugin and widget backend
     @ivar _m: manager instance
     """
-    icon = "/dl/openvpn/icon.png"
+    iconfont = "gen-lock"
     text = "OpenVPN"
 
     def __init__(self, *args, **kwargs):
