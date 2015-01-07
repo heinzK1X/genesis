@@ -19,8 +19,11 @@
     "app_homepage": "https://jitsi.org/",
     "logo": true,
     "screenshots": [],
-    "services": [
+     "services": [
         {
+            "name": "Jitsi Meet",
+            "binary": "TODO",
+            "ports": [["tcp", "5222"], ["tcp", "5269"]]
         }
     ],
     "modules": ["main", "backend"],
@@ -37,6 +40,11 @@
                 "type": "plugin",
                 "name": "Reverse Proxy",
                 "package": "reverseproxy"
+            },
+            {
+                "type": "plugin",
+                "name": "Chat (XMPP)",
+                "package": "xmpp"
             }
         ]
     },
