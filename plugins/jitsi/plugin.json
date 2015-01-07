@@ -1,0 +1,45 @@
+{
+    "name": "Jitsi",
+    "type": "plugin",
+    "icon": "fa fa-video-camera",
+    "description": {
+        "short": "Secure video conferencing.",
+        "long": "Jitsi Meet allows for very efficient collaboration. It allows users to stream their desktop or only some windows. It's OpenSource (MIT), and builds on WebRTC to provide high quality, scalable video conferences."
+    },
+    "categories": [
+        {
+            "primary": "Communication",
+            "secondary": ["Video Conferencing"]
+        }
+    ],
+    "version": "0.1",
+    "author": "Heiner",
+    "homepage": "https://github.com/heinzK1X",
+    "app_author": "Jitsi",
+    "app_homepage": "https://jitsi.org/",
+    "logo": true,
+    "screenshots": [],
+    "services": [
+        {
+        }
+    ],
+    "modules": ["main", "backend"],
+    "platforms": ["any"],
+    "dependencies": {
+        "any": [
+            {
+                "type": "app",
+                "name": "Java Runtime",
+                "package": "jre7-openjdk-headless",
+                "binary": "java"
+            },
+            {
+                "type": "plugin",
+                "name": "Reverse Proxy",
+                "package": "reverseproxy"
+            }
+        ]
+    },
+    "generation": 1
+}
+
