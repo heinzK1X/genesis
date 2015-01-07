@@ -1,0 +1,41 @@
+{
+    "name": "Jitsi Meet",
+    "type": "plugin",
+    "icon": "gen-bubbles",
+    "description": {
+        "short": "Chat/IM and video-conferencing server",
+        "long": "Jitsi Meet is an OpenSource (MIT) WebRTC JavaScript application that uses Jitsi Videobridge to provide high quality, scalable video conferences. It also allows users to stream their desktop or only some windows."
+    },
+    "categories": [
+        {
+            "primary": "Communication",
+            "secondary": ["Instant Messaging (IM)", "Video conferencing"]
+        }
+    ],
+    "version": "0.1",
+    "author": "Heiner",
+    "homepage": "https://github.com/heinzK1X",
+    "app_author": "Jitsi",
+    "app_homepage": "https://jitsi.org/",
+    "logo": false,
+    "screenshots": [],
+    "services": [
+        {
+            "name": "Jitsi Meet",
+            "binary": "TODO",
+            "ports": [["tcp", "5222"], ["tcp", "5269"]]
+        }
+    ],
+    "modules": ["main"],
+    "platforms": ["any"],
+    "dependencies": {
+        "any": [
+            {
+                "type": "plugin",
+                "name": "Chat (XMPP)",
+                "package": "xmpp"
+            },
+        ]
+    },
+    "generation": 1
+}
